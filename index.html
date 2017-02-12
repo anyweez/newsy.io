@@ -1,0 +1,29 @@
+<!doctype html>
+
+<html>
+
+<head>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css" />
+</head>
+
+<body>
+    <header>
+        <h1>Worldview</h1>
+    </header>
+    <main>
+        <wv-map @select="highlight"></wv-map>
+        <wv-highlight :target="active"></wv-highlight>
+    </main>
+    <footer>
+
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.1.10/vue.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vuex/2.1.2/vuex.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>
