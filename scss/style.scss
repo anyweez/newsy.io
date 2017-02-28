@@ -3,7 +3,12 @@
 @include foundation-global-styles;
 @include foundation-grid;
 
+$color-outline: #3e3e3e;
+$color-text: #2e2e2e;
+
+@import 'base';
 @import 'header';
 
 /* Components */
 @import 'components/wv-map';
+@import 'components/wv-highlight';

@@ -1,0 +1,70 @@
+$highlight-height: 160px;
+
+#highlight {
+    z-index: 10;
+
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    height: $highlight-height;
+
+    background-color: white;
+    border-top: 2px solid $color-outline;
+
+    ul {
+        overflow: hidden;
+        margin: 0;
+        padding: 0;
+
+        li {
+            display: inline-block;
+            width: 320px;
+            height: $highlight-height;
+            box-sizing: border-box;
+            border-right: 2px solid lighten($color-outline, 60%);
+            vertical-align: top;
+
+            background-color: #e9e9e9;
+        }
+
+        li:first-of-type {
+            background-color: white;
+        }
+    }
+
+    /* Article styling */
+    .article {
+        color: $color-text;
+        padding: 0 10px 0 10px;
+
+        h2.headline {
+            margin: 0;
+            padding-bottom: 8px;
+            font-weight: 600;
+        }
+
+        h3.country {
+            margin: 8px 0 2px 0;
+            text-transform: uppercase;
+            color: lighten($color-text, 40%);
+            font-weight: 400;
+
+            .perf {
+                float: right;
+            }
+        }
+
+        h4.source {
+            margin: 0;
+            font-weight: 400;
+            color: lighten($color-text, 20%);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+    }
+}

@@ -8,28 +8,25 @@ const state = {
 const mutations = {
     addArticle(state, article) {
         state.articles.push(article);
-        console.log(`Articles: ${state.articles.length}`)
     },
 
     clearArticles(state) {
-        state.articles.length = 0;
-    }
+        state.articles.splice(0, state.articles.length);
+    },
 };
 
 const actions = {
     /**
      * Fetch a new set of articles and modify the shared state.
      */
-    fetchArticles({ commit }, country) {
+    fetchArticles({ commit }) {
         return new Promise((resolve, reject) => {
             commit('clearArticles');
 
-            console.log(`Retrieving articles for ${country.id}`);
-            fetch('articles.json')
+            // TODO: path should be data/articles/<country_id>.json
+            fetch('data/articles/articles.json')
                 .then(resp => resp.json())
                 .then(articles => {
-                    console.log('got articles');
-                    console.log(articles);
                     articles.forEach(article => commit('addArticle', article));
                     resolve();
                 })
@@ -39,9 +36,7 @@ const actions = {
 };
 
 const getters = {
-    articles(state) {
-        return state.articles;
-    },
-}
+    articles: state => state.articles,
+};
 
 export default new Vuex.Store({ state, getters, actions, mutations });

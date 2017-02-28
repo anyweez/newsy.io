@@ -2,7 +2,7 @@ import WVMap from './components/wv-map.vue';
 import WVHighlight from './components/wv-highlight.vue';
 
 import store from './store';
- 
+
 const $ = document.querySelector.bind(document);
 
 window.addEventListener('DOMContentLoaded', () => {
@@ -21,11 +21,15 @@ window.addEventListener('DOMContentLoaded', () => {
                 active: {},
             };
         },
+        mounted() {
+            console.log('fetching articles');
+            this.$store.dispatch('fetchArticles');
+        },
         methods: {
             highlight(target) {
                 /* Update active country and fetch relevant articles. */
-                this.active = target;
-                this.$store.dispatch('fetchArticles', target);
+                // this.active = target;
+                // this.$store.dispatch('fetchArticles', target);
             }
         }
     });

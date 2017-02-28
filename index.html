@@ -5,20 +5,22 @@
 <head>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css" />
+    <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
 </head>
 
 <body>
-    <header>
-        <h1>Worldview</h1>
-    </header>
+    <!-- vue app -->
     <main>
+        <!--
+        <section class="header">
+            <h1>Worldview</h1>
+            <p>updated mm dd @ hh:mm</p>
+        </section>
+        -->
         <wv-map @select="highlight"></wv-map>
-        <wv-highlight :target="active"></wv-highlight>
+        <wv-highlight></wv-highlight>
     </main>
-    <footer>
-
-    </footer>
-
+    
     <!-- Scripts -->
     <script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.1.10/vue.js"></script>

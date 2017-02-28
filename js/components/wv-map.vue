@@ -29,7 +29,13 @@
         name: 'wv-map',
         /* On page load, render the map in the DOM */
         mounted() {
-            const map = L.map('map-loc').setView([37.8, -96], 4);
+            // const map = L.map('map-loc').setView([20.0, 0.0], 2.4);
+            const map = L.map('map-loc', {
+                zoomControl: false,
+            }).fitBounds([
+                [-70, 80],
+                [80, -60]
+            ]);
             const token = 'pk.eyJ1IjoibHVrZXMiLCJhIjoiY2l5dTNsMGgxMDA0MDMzbGtxNmRoY3Z1cSJ9.cue1Rm47SIxUHmEEC3HVmg';
 
             /* Render the world map */
@@ -38,7 +44,7 @@
             }).addTo(map);
 
             /* Fetch GeoJSON data and add as layer on map */
-            fetch('annotated.json')
+            fetch('data/countries.json')
                 .then(resp => resp.json())
                 .then(response => {
                     const geojson = L.geoJson(response, {
@@ -55,11 +61,11 @@
                                     });
 
                                     e.target.bringToFront();
-                                    info.update(e.target.feature.properties);
+                                    // info.update(e.target.feature.properties);
                                 },
                                 mouseout: e => {
                                     geojson.resetStyle(e.target);
-                                    info.update();
+                                    // info.update();
                                 },
                                 click: e => {
                                     map.fitBounds(e.target.getBounds());
@@ -71,6 +77,7 @@
                     }).addTo(map);
                 });
 
+            /*
             const info = L.control();
 
             info.onAdd = function (map) {
@@ -89,6 +96,7 @@
             };
 
             info.addTo(map);
+            */
         },
     };
 
