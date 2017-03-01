@@ -1,0 +1,38 @@
+[
+    {
+        "title": "3 dead after small plane crashes into CA homes",
+        "url": "https://google.com",
+        "published": "2017-02-09T18:31:39+00:00",
+        "country": {
+            "name": "United States",
+            "performance": 1.15
+        },
+        "source": {
+            "name": "Free and Open Press Org"
+        }
+    },
+    {
+        "title": "Fidelity Slashes Commissions in the Latest Salvo in Fee Wars",
+        "url": "https://google.com",
+        "published": "2017-02-13T18:31:39+00:00",
+        "country": {
+            "name": "Russia",
+            "performance": 14.73
+        },
+        "source": {
+            "name": "The Intercept"
+        }
+    },
+    {
+        "title": "What a Fed Rate Hike in March Would Imply",
+        "url": "https://google.com",
+        "published": "2017-02-13T18:31:39+00:00",
+        "country": {
+            "name": "Japan",
+            "performance": 14.73
+        },
+        "source": {
+            "name": "Fox News"
+        }
+    }
+]
