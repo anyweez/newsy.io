@@ -29,10 +29,12 @@ $color-text: #2e2e2e;
             vertical-align: top;
 
             background-color: #e9e9e9;
+            opacity: 0.6;
         }
 
         li:first-of-type {
             background-color: white;
+            opacity: 1;
         }
     }
 
@@ -71,10 +73,16 @@ $color-text: #2e2e2e;
     }
 }
 
-.articles-enter-active, .articles-leave-active {
-  transition: all 1s;
-}
-.articles-enter, .articles-leave-to /* .list-leave-active for <2.1.8 */ {
-  opacity: 0;
-  transform: translateX(30px);
-}
+// // .articles-enter-active, .articles-leave-active {
+// //   transition: translateX(50px) 1s;
+// // }
+
+// .articles-enter, .articles-leave-to /* .list-leave-active for <2.1.8 */ {
+//   opacity: 0;
+//   transition: translateX(-1000px) 1s;
+// //   transition: transform 1s;
+// }
+
+// .articles-move {
+//   transition: transform 1s;
+// }

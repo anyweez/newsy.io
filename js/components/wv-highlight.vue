@@ -2,7 +2,7 @@
     <section id="highlight">
             <transition-group name="articles" tag="ul">
                 <li class="article" :key="article" v-for="article in chosen">
-                    <h3 class="country">{{ article.country.name }} <span class="perf">(+x.x%}</span></h3>
+                    <h3 class="country">{{ article.country.name }} <span class="perf">{{ display_perf(article.country.performance) }}</span></h3>
                     <h2 class="headline">
                         <a :href="article.url">{{ article.title }}</a>
                     </h2>
@@ -14,8 +14,8 @@
 
 <script>
     import store from '../store';
-    const VISIBLE_ARTICLE_COUNT = 6;
-    const SCROLL_TIME_SECONDS = 30;
+    const VISIBLE_ARTICLE_COUNT = 7;
+    const SCROLL_TIME_SECONDS = 20;
 
     export default {
         name: 'wv-highlight',
@@ -42,9 +42,13 @@
                     const remainder = VISIBLE_ARTICLE_COUNT - (this.articles.length - this.current);
                     const result = this.articles.slice(this.current).concat(this.articles.slice(0, remainder));
 
-                    // this.current = remainder;
                     return result;
                 }
+            },
+        },
+        methods: {
+            display_perf(score) {
+                return ['(', score >= 0 ? '+' : '-', Math.round(score * 1000) / 10, '%)'].join('');
             },
         },
     };
