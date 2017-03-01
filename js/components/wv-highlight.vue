@@ -6,7 +6,7 @@
                     <h2 class="headline">
                         <a :href="article.url">{{ article.title }}</a>
                     </h2>
-                    <h4 class="source">{{ article.source.name }}</h4>
+                    <h4 class="source">{{ display_date(article.published) }}, {{ article.source.name }}</h4>
                 </li>
             </transition-group>
     </section>
@@ -49,6 +49,12 @@
         methods: {
             display_perf(score) {
                 return ['(', score >= 0 ? '+' : '-', Math.round(score * 1000) / 10, '%)'].join('');
+            },
+            display_date(when) {
+                const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec'];
+                const raw = new Date(Date.parse(when));
+
+                return months[raw.getMonth()] + ' ' + raw.getDate();
             },
         },
     };
